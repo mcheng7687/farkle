@@ -18,6 +18,9 @@ let selected = { quantity: 0, values: [] };
 const playerScore = { bank: 0, current: 0 };
 
 function initialize() {
+    // $("#score-chart").append(`<img class="dice-1">`);
+    
+
     assign_dice();
 }
 
@@ -25,7 +28,7 @@ function assign_dice() {
     /*
     Assign die images to document based on DICE values
     */
-    $("img").remove();
+    $("img.dice").remove();
 
     for (let d = 0; d < DICE.length; d++) {
         $("#dice-roll").append(`<img class="dice" id="dice-${d}">`)
@@ -218,7 +221,7 @@ $("#bank-btn").on("click", function () {
     playerScore.bank += playerScore.current;
     playerScore.current = 0;
 
-    $("img").remove();
+    $("img.dice").remove();
 
     verify_winner();
     resetDice();

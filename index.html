@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Farkle</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!-- <link rel="stylesheet" href="assets/css/bootstrap-4.3.1/css/bootstrap.min.css" /> -->
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+	<div id="game" style="visibility: hidden;">
+		<div>
+			<h3>BANK SCORE</h3>
+			<div id="bank-score">0</div>
+		</div>
+		<table id="score-chart">
+			<tr>
+				<th>Combinations</th>
+			</tr>
+			<tr>
+				<td><img src="dice-img/dice-5.png" alt="">Ones</td>
+				<td>100</td>
+				<td><img src="dice-img/dice-1.png" alt="">Fives</td>
+				<td>50</td>
+				<td>4 OF A KIND</td>
+				<td>1000</td>
+			</tr>
+			<tr>
+				<td colspan="3">Triple Ones</td>
+				<td>300</td>
+				<td>5 OF A KIND</td>
+				<td>2000</td>
+			</tr>
+			<tr>
+				<td colspan="3">Triple Twos</td>
+				<td>200</td>
+				<td>6 OF A KIND</td>
+				<td>3000</td>
+			</tr>
+			<tr>
+				<td colspan="3">Triple Three</td>
+				<td>300</td>
+				<td>STRAIGHT</td>
+				<td>1500</td>
+			</tr>
+			<tr>
+				<td colspan="3">Triple Fours</td>
+				<td>400</td>
+				<td>3 PAIRS</td>
+				<td>1500</td>
+			</tr>
+			<tr>
+				<td colspan="3">Triple Fives</td>
+				<td>500</td>
+				<td>2 TRIPLETS</td>
+				<td>2500</td>
+			</tr>
+			<tr>
+				<td colspan="3">Triple Sixes</td>
+				<td>600</td>
+				<td>4 OF A KIND + PAIR</td>
+				<td>1500</td>
+			</tr>
+		</table>
+		<div class="center" id="dice-roll">
+			<button id="roll-btn">ROLL</button>
+			<button id="score-btn" style="visibility: hidden;">SCORE</button>
+		</div>
+		<div class="text-center">
+			<h3>CURRENT SCORE</h3>
+			<div id="current-score">0</div>
+			<button id="bank-btn" style="visibility: hidden;">BANK</button>
+		</div>
+
+	</div>
+	<button class="center" id="start-btn">START</button>
+	<script src="js/jquery-3.6.3.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

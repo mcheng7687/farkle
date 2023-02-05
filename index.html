@@ -18,38 +18,42 @@
 		</div>
 		<table id="score-chart">
 			<tr>
-				<th>Combinations</th>
+				<th colspan="4">Combinations</th>
 			</tr>
 			<tr>
-				<td><img src="dice-img/dice-1.png" alt="1 dice" class="dice-chart"></td>
-				<td>100</td>
-				<td>4 OF A KIND</td>
-				<td>1000</td>
+				<td class="chart-col-1">
+					<img src="dice-img/dice-1.png" alt="1 dice" class="dice-chart">
+				</td>
+				<td class="chart-col-2">100</td>
+				<td class="chart-col-3">4 OF A KIND</td>
+				<td class="chart-col-4">1000</td>
 			</tr>
 			<tr>
-				<td><img src="dice-img/dice-5.png" alt="5 dice" class="dice-chart"></td>
-				<td>50</td>
-				<td>5 OF A KIND</td>
-				<td>2000</td>
+				<td class="chart-col-1">
+					<img src="dice-img/dice-5.png" alt="5 dice" class="dice-chart">
+				</td>
+				<td class="chart-col-2">50</td>
+				<td class="chart-col-3">5 OF A KIND</td>
+				<td class="chart-col-4">2000</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="chart-col-1">
 					<img src="dice-img/dice-1.png" alt="1 dice" class="dice-chart">
 					<img src="dice-img/dice-1.png" alt="1 dice" class="dice-chart">
 					<img src="dice-img/dice-1.png" alt="1 dice" class="dice-chart">
 				</td>
-				<td>300</td>
-				<td>6 OF A KIND</td>
-				<td>3000</td>
+				<td class="chart-col-2">300</td>
+				<td class="chart-col-3">6 OF A KIND</td>
+				<td class="chart-col-4">3000</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="chart-col-1">
 					<img src="dice-img/dice-2.png" alt="2 dice" class="dice-chart">
 					<img src="dice-img/dice-2.png" alt="2 dice" class="dice-chart">
 					<img src="dice-img/dice-2.png" alt="2 dice" class="dice-chart">
 				</td>
-				<td>200</td>
-				<td>
+				<td class="chart-col-2">200</td>
+				<td class="chart-col-3">
 					<img src="dice-img/dice-1.png" alt="1 dice" class="dice-chart">
 					<img src="dice-img/dice-2.png" alt="2 dice" class="dice-chart">
 					<img src="dice-img/dice-3.png" alt="3 dice" class="dice-chart">
@@ -57,45 +61,45 @@
 					<img src="dice-img/dice-5.png" alt="5 dice" class="dice-chart">
 					<img src="dice-img/dice-6.png" alt="6 dice" class="dice-chart">
 				</td>
-				<td>1500</td>
+				<td class="chart-col-4">1500</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="chart-col-1">
 					<img src="dice-img/dice-3.png" alt="3 dice" class="dice-chart">
 					<img src="dice-img/dice-3.png" alt="3 dice" class="dice-chart">
 					<img src="dice-img/dice-3.png" alt="3 dice" class="dice-chart">
 				</td>
-				<td>300</td>
-				<td>3 PAIRS</td>
-				<td>1500</td>
+				<td class="chart-col-2">300</td>
+				<td class="chart-col-3">3 PAIRS</td>
+				<td class="chart-col-4">1500</td>
 			</tr>
 			<tr>
-				<td> 
+				<td class="chart-col-1"> 
 					<img src="dice-img/dice-4.png" alt="4 dice" class="dice-chart">
 					<img src="dice-img/dice-4.png" alt="4 dice" class="dice-chart">
 					<img src="dice-img/dice-4.png" alt="4 dice" class="dice-chart">
 				</td>
-				<td>400</td>
-				<td>2 TRIPLETS</td>
-				<td>2500</td>
+				<td class="chart-col-2">400</td>
+				<td class="chart-col-3">2 TRIPLETS</td>
+				<td class="chart-col-4">2500</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="chart-col-1">
 					<img src="dice-img/dice-5.png" alt="5 dice" class="dice-chart">
 					<img src="dice-img/dice-5.png" alt="5 dice" class="dice-chart">
 					<img src="dice-img/dice-5.png" alt="5 dice" class="dice-chart">
 				</td>
-				<td>500</td>
-				<td>4 OF A KIND + PAIR</td>
-				<td>1500</td>
+				<td class="chart-col-2">500</td>
+				<td class="chart-col-3">4 OF A KIND + PAIR</td>
+				<td class="chart-col-4">1500</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="chart-col-1">
 					<img src="dice-img/dice-6.png" alt="6 dice" class="dice-chart">
 					<img src="dice-img/dice-6.png" alt="6 dice" class="dice-chart">
 					<img src="dice-img/dice-6.png" alt="6 dice" class="dice-chart">
 				</td>
-				<td>600</td>
+				<td class="chart-col-2">600</td>
 			</tr>
 		</table>
 		<div class="center" id="dice-roll">
@@ -105,6 +109,7 @@
 		<div class="text-center">
 			<h3>CURRENT SCORE</h3>
 			<div id="current-score">0</div>
+			<br>
 			<button id="bank-btn" style="visibility: hidden;">BANK</button>
 		</div>
 

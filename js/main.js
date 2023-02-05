@@ -61,7 +61,7 @@ function max_points(die_arr) {
     Determine max points from an array of die
     Constraints: die_arr.length <= 6, 1 <= die_arr[i] <= 6 
     */
-    const combos = {};
+    const combos = {}, used_dice = {};
     let points = 0, triple_pairs;
 
     for (let dice of die_arr) {
@@ -75,32 +75,36 @@ function max_points(die_arr) {
 
             if (combos[dice_num] === 6)
                 // 6 of any number
-                return 3000;
+                return {points: 3000, dice: combos};
 
             else if (Object.keys(combos).length === 6)
                 // straight
-                return 1500;
+                return {points: 1500, dice: combos};
 
             else if (combos[dice_num] === 3 && Object.keys(combos).length === 2)
                 // (2) triplets
-                return 2500;
+                return {points: 2500, dice: combos};
 
             else if (combos[dice_num] === 4 && Object.keys(combos).length === 2)
                 // 4 of any number + pair
-                return 1500;
+                return {points: 1500, dice: combos};
 
             else if (triple_pairs === undefined && combos[dice_num] === 2 && Object.keys(combos).length === 3)
                 // 3 pairs
                 triple_pairs = true;
         }
 
-        if (combos[dice_num] === 5)
+        if (combos[dice_num] === 5) {
             // 5 of any number
             points += 2000;
+            used_dice[dice_num] = 5;
+        }
 
-        else if (combos[dice_num] === 4)
+        else if (combos[dice_num] === 4) {
             // 4 of any number 
             points += 1000;
+            used_dice[dice_num] = 4;
+        }
 
         else if (combos[dice_num] === 3) {
             if (+dice_num > 1)
@@ -110,21 +114,26 @@ function max_points(die_arr) {
                 // 3 of one's
                 points += 300;
 
+            used_dice[dice_num] = 3;
             triple_pairs = false;
         }
 
-        else if (+dice_num === 1)
+        else if (+dice_num === 1) {
             // single one's
             points += combos[dice_num] * 100;
+            used_dice[dice_num] = combos[dice_num];
+        }
 
-        else if (+dice_num === 5)
+        else if (+dice_num === 5) {
             // single five's
             points += combos[dice_num] * 50;
+            used_dice[dice_num] = combos[dice_num];
+        }
     }
 
-    if (triple_pairs) return 1500;
+    if (triple_pairs) return {points: 1500, dice: combos};
 
-    return points;
+    return {points: points, dice: used_dice};
 }
 
 function updateScores() {
@@ -157,7 +166,7 @@ function verify_farkle() {
     /* 
     Verify if no dice combination can give a score
     */
-    const farkle = max_points(DICE) === 0;
+    const farkle = max_points(DICE).points === 0;
 
     if (farkle) { 
         alert("FARKLE!");
@@ -192,13 +201,18 @@ $("#roll-btn").on("click", function () {
 });
 
 $("#score-btn").on("click", function () {
-    const newPoints = max_points(selected.values);
+    const sel = max_points(selected.values);
+    const newPoints = sel.points;
+    // console.log(sel.dice)
 
     if (selected.quantity < 1) {
         console.log("Must select at least one dice before scoring");
     }
     else if (newPoints === 0) {
         console.log("No possible score from selected die");
+    }
+    else if (selected.quantity != Object.values(sel.dice).reduce((a,b)=> a+b,0)) {
+        console.log(`Not all die needed`);
     }
     else {
         console.log(`Selected ${selected.quantity} die at values ${selected.values}`);
